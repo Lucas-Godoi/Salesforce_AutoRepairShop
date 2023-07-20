@@ -73,26 +73,28 @@ Este projeto é um sistema de uma oficina mecânica que permite criar e gerencia
 - Regras de validação para campos, para mitigar erros do usuário, como NIF, e-mail, número de telefone, etc.
 
 ## Capturas de Tela da Aplicação
-<div align="center">
-  <div justify-content: bottom;">
-    <img src="assets/repair_order.png" height="150" style='margin-bottom: 35px'>
-    <img src="assets/technicians.png" height="100" style='margin-bottom: 35px'>
-    <img src="assets/replacement_part.png" height="100" style='margin-bottom: 35px'>
-    <img src="assets/customers.png" height="100" style='margin-bottom: 35px'>
-  </div> 
-</div>
+<h4>Repair Order Tab</h4>
+<img src="assets/repair_order.png" height="250">
+<h4>Technicians Tab</h4>
+<img src="assets/technicians.png" height="300">
+<h4>Replacement Parts Tab</h4>
+<img src="assets/replacement_part.png" height="400">
+<h4>Customers Tab</h4>
+<img src="assets/customers.png" height="350">
+
+
 
 
 ## Flow e Validation Rules
 <div style="text-align: left">
-  <h4>Flow to make possible select multiple techinicians</h4>
+  <h4>Flow necessário para selecionar múltiplos técnicos</h4>
   <p>É um screen flow, que contém um componente para
 uma ação via código Apex onde o usuário pode adicionar mais
 técnicos a uma repair order, necessário para atender ao novo modelo de dados
 many-to-many.</p>
   <img src="assets/mult_select_technicians.png" height=500>
 
-  <h4>Flow to update color</h4>
+  <h4>Flow para atualizar a condição de cor</h4>
   <p>É um scheduled flow, que faz com que à 00:00 de todos os dias, faz a
 verificação para atualização do campo semáforo de cada repair order. Com base nos
 critérios definidos, se a data atual for menor que a data de entrega e o status não estiver
@@ -106,7 +108,7 @@ que o scheduled flow atualiza apenas uma vez ao dia.
 </p>
   <img src="assets/flow_update_color.png" height=500>
  
-  <h4>Flow to make possible calculate tech utilization</h4>
+  <h4>Flow necessário para caluclar a utilização de um técnico</h4>
   <p>Trigger flow criado para somar a utilização de uma repair
 order à utilização total de um técnico, tendo em vista que uma repair order tem uma
 porcentagem de utilização ligada a ela, o que faz sentido em um contexto real, se o técnico for
