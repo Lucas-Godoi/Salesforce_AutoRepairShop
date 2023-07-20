@@ -73,15 +73,50 @@ Este projeto é um sistema de uma oficina mecânica que permite criar e gerencia
 - Regras de validação para campos, para mitigar erros do usuário, como NIF, e-mail, número de telefone, etc.
 
 ## Capturas de Tela da Aplicação
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/e4bab7e2-23ff-4464-8f80-f20075e717b4)
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/76c72340-e538-49a9-95d3-887146425eb6)
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/5c29371c-cb1f-458c-bd78-054c7935c7e3)
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/402292ed-9f45-4071-9179-dd9824b31889)
+<div align="center">
+  <div justify-content: bottom;">
+    <img src="assets/repair_order.png" height="150" style='margin-bottom: 35px'>
+    <img src="assets/technicians.png" height="100" style='margin-bottom: 35px'>
+    <img src="assets/replacement_part.png" height="100" style='margin-bottom: 35px'>
+    <img src="assets/customers.png" height="100" style='margin-bottom: 35px'>
+  </div> 
+</div>
+
 
 ## Flow e Validation Rules
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/01d6c557-c8f4-4d68-94de-a88cb462ba08)
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/d3e0815e-38e1-4cf4-9111-cd9481b8a817)
-![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/b841184f-51b5-41a1-9255-ec1cb3c911e8)
+<div style="text-align: left">
+  <h4>Flow to make possible select multiple techinicians</h4>
+  <p>É um screen flow, que contém um componente para
+uma ação via código Apex onde o usuário pode adicionar mais
+técnicos a uma repair order, necessário para atender ao novo modelo de dados
+many-to-many.</p>
+  <img src="assets/mult_select_technicians.png" height=500>
 
+  <h4>Flow to update color</h4>
+  <p>É um scheduled flow, que faz com que à 00:00 de todos os dias, faz a
+verificação para atualização do campo semáforo de cada repair order. Com base nos
+critérios definidos, se a data atual for menor que a data de entrega e o status não estiver
+finished, mostra o semáforo verde, se a data atual passou até 3 dias da data de entrega e o
+status não estiver finished, mostra o semáforo amarelo e o status passa para behind
+schedule e finalmente se a data de entrega passou mais de 3 dias e o status não estiver
+finished, mostra o semáforo na cor vermelha e o status passa para behind schedule. Foi
+criada a mesma sequência do fluxo de dados para um flow trigger, chamado update status
+repair order, necessário para tratar o caso do usuário alterar a data durante a execução, já
+que o scheduled flow atualiza apenas uma vez ao dia.
+</p>
+  <img src="assets/flow_update_color.png" height=500>
+ 
+  <h4>Flow to make possible calculate tech utilization</h4>
+  <p>Trigger flow criado para somar a utilização de uma repair
+order à utilização total de um técnico, tendo em vista que uma repair order tem uma
+porcentagem de utilização ligada a ela, o que faz sentido em um contexto real, se o técnico for
+atribuído a essa repair order, a porcentagem de utilização da mesma passa a ser adicionada ao
+total da utilização do técnico. Quando o técnico é alterado, o flow é capaz de remover a
+utilização do antigo técnico, e somar ao novo técnico. Há uma validação no campo do técnico
+que não pode ultrapassar 100% do limite de utilização, logo, não irá atualizar para o técnico
+selecionado se tentarmos atualizar o mesmo com uma repair order que passe ultrapasse o
+limite imposto.</p>
+  <img src="assets/flow_tech_utilization.png" height=500>
+</div>
 
 Este README descreve as principais funcionalidades do sistema, incluindo os requisitos do trabalho, as funcionalidades implementadas e as boas práticas de desenvolvimento adotadas. O sistema visa uma solução eficiente para gerenciar ordens de reparo, técnicos e peças de substituição em uma oficina mecânica. Em caso de dúvidas ou sugestões, não hesite em entrar em contato.
