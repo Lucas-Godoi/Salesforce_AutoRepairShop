@@ -73,9 +73,15 @@ Este projeto é um sistema de uma oficina mecânica que permite criar e gerencia
 - Regras de validação para campos, para mitigar erros do usuário, como NIF, e-mail, número de telefone, etc.
 
 ## Capturas de Tela da Aplicação
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/e4bab7e2-23ff-4464-8f80-f20075e717b4)
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/76c72340-e538-49a9-95d3-887146425eb6)
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/5c29371c-cb1f-458c-bd78-054c7935c7e3)
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/402292ed-9f45-4071-9179-dd9824b31889)
 
-(adicionar aqui como a informação foi organizada no sistema, como a utilização de Tabs, Pages, Layouts, etc.)
-
+## Flow e Validation Rules
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/01d6c557-c8f4-4d68-94de-a88cb462ba08)
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/d3e0815e-38e1-4cf4-9111-cd9481b8a817)
+![image](https://github.com/Lucas-Godoi/Salesforce_AutoRepairShop/assets/66628114/b841184f-51b5-41a1-9255-ec1cb3c911e8)
 
 
 Este README descreve as principais funcionalidades do sistema, incluindo os requisitos do trabalho, as funcionalidades implementadas e as boas práticas de desenvolvimento adotadas. O sistema visa uma solução eficiente para gerenciar ordens de reparo, técnicos e peças de substituição em uma oficina mecânica. Em caso de dúvidas ou sugestões, não hesite em entrar em contato.
