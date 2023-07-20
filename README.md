@@ -73,6 +73,8 @@ Este projeto é um sistema de uma oficina mecânica que permite criar e gerencia
 - Regras de validação para campos, para mitigar erros do usuário, como NIF, e-mail, número de telefone, etc.
 
 ## Capturas de Tela da Aplicação
+<h4>Home Tab</h4>
+<img src="assets/home.png" height="400">
 <h4>Repair Order Tab</h4>
 <img src="assets/repair_order.png" height="250">
 <h4>Technicians Tab</h4>
@@ -119,6 +121,18 @@ que não pode ultrapassar 100% do limite de utilização, logo, não irá atuali
 selecionado se tentarmos atualizar o mesmo com uma repair order que passe ultrapasse o
 limite imposto.</p>
   <img src="assets/flow_tech_utilization.png" height=500>
+</div>
+
+<h4>Flow necessário para autorizar o veículo para teste ou não</h4>
+  <p>Se o status de uma repair order for igual a finished, o carro é
+autorizado para realizar testes, então emite uma mensagem chatter "{Nome da Repair Order}
+is finished! Now the vehicle can be tested before being delivered to the customer!" e atualiza
+o campo Vehicle Tests para Authorized. Foi criado um flow similar para realizar o inverso, pois se uma repair order estava com o status de
+finished mas por algum motivo precisou voltar para outro status, o flow emite uma
+mensagem chatter "The test for the repair order {Nome da Repair Order} didn't occur as
+planned, the vehicle is unathorized for test untill the problem is fixed.” e atualiza o campo
+Vehicle Testes para Unauthorized. </p>
+  <img src="assets/flow_ready_for_tests.png" height=500>
 </div>
 
 Este README descreve as principais funcionalidades do sistema, incluindo os requisitos do trabalho, as funcionalidades implementadas e as boas práticas de desenvolvimento adotadas. O sistema visa uma solução eficiente para gerenciar ordens de reparo, técnicos e peças de substituição em uma oficina mecânica. Em caso de dúvidas ou sugestões, não hesite em entrar em contato.
